@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Flask Template Example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <style type="text/css">
+      .container {
+        max-width: 1200px;
+        padding-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <p><b>Found {{total_events}} events around you as of {{last_upd_ts}}!</b></p>
+      <p>Here are the details:</p>
+      <ul>
+        {% for event in my_events %}
+        <li><h3>{{event['name']}}</h3>
+          <p>{{event['yes_rsvp_count']}} ppl are attending </p>
+          <a href="{{event['event_url']}}">RSVP </a>
+          Time: {{event['time']}}
+
+
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  </body>
+</html>
